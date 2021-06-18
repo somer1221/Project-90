@@ -38,3 +38,35 @@ function send() {
     document.getElementById("1st_number").value = "";
     document.getElementById("2nd_number").value = "";
 }
+function check() {
+
+    get_answer = document.getElementById("input_check_box").value;
+  
+    if(get_answer == actual_answer) {
+  
+      if(answer_turn == "player1") {
+        player1_score += 1;
+        document.getElementById("player1_score").innerHTML = player1_score;
+      }
+      else {
+        player2_score += 1;
+        document.getElementById("player2_score").innerHTML = player2_score;
+      }
+    }
+    if(question_turn == "player1") {
+      question_turn = "player2";
+      document.getElementById("player_question").innerHTML = + question_turn + "'s Turn To Give A Question";
+      answer_turn = "player1";
+      document.getElementById("player_answer").innerHTML = answer_turn + "'s Turn to Answer";
+    }
+    else {
+      question_turn = "player_1";
+      document.getElementById("player_question").innerHTML = question_turn + "'s Turn To Give A Question";
+      answer_turn = "player2";
+      document.getElementById("player_answer").innerHTML = answer_turn + "'s Turn to Answer";
+    }
+
+    document.getElementById("output").innerHTML = "";
+}
+  
+  
